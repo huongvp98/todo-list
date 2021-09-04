@@ -1,0 +1,20 @@
+.list-task {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 77px;
+}
+/* .new-task {
+  min-height: 100vh;
+} */
+@media screen and (max-width: 768px) {
+  .card-header .d-flex {
+    justify-content: flex-end;
+  }
+}
+@media screen and (max-width: 576px) {
+  .list-task {
+    min-height: auto;
+    position: relative;
+    padding-bottom: 92px;
+  }
+}

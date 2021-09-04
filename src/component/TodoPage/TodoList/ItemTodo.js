@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import TodoForm from "../TodoForm";
 
 function ItemTodo(props) {
   const [showDetail, setShowDetail] = useState(false);
+  // show detail
   const onClickDetail = () => {
     setShowDetail(!showDetail);
   };
+  // select task
+  const onSelectedTask = (task, e) => {
+    const isSelected = e.target.checked;
+    props.onSelectedTask(task, isSelected, props.index);
+  };
+  // useEffect(() => {
+  //   const checked = props.todo?.isSelected || false;
+  //   console.log(checked, props.todo)
+  //   const checkboxes = document.querySelector('input[type="checkbox"]');
+  //   checkboxes.checked = checked;
+  // }, [props.todo]);
   return (
     <div>
       <div class="card mt-3">
@@ -15,11 +27,9 @@ function ItemTodo(props) {
             <input
               class="form-check-input"
               type="checkbox"
-              value=""
               id="flexCheckDefault"
-              onChange={(e) =>
-                props.onSelectedTask(props.todo, e.target.checked)
-              }
+              onChange={(e) => onSelectedTask(props.todo, e)}
+              checked = {props.todo?.isSelected || false}
             />
             <label class="form-check-label" for="flexCheckDefault">
               {props.todo.Name}

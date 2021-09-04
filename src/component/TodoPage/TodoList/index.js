@@ -17,24 +17,28 @@ function TodoList(props) {
   };
   return (
     <>
-      <div className="container p-3">
-        <form onSubmit={onSearch}>
-          <input
-            placeholder="Search..."
-            className="form-control"
-            onChange={(e) => props.setSearchValue(e.target.value)}
-          />
-        </form>
-        {(props.todoList || []).map((todo, index) => (
-          <div key={index}>
-            <ItemTodo
-              todo={todo}
-              handleSubmit={props.handleSubmit}
-              onClickRemove={props.onClickRemove}
-              onSelectedTask={props.onSelectedTask}
+      <div className="wrap-content">
+        <div className="container p-3 ">
+          <h1 className="text-center pb-3 m-3">Todo List</h1>
+          <form onSubmit={onSearch}>
+            <input
+              placeholder="Search..."
+              className="form-control"
+              onChange={(e) => props.setSearchValue(e.target.value)}
             />
-          </div>
-        ))}
+          </form>
+          {(props.todoList || []).map((todo, index) => (
+            <div key={index}>
+              <ItemTodo
+                index={index}
+                todo={todo}
+                handleSubmit={props.handleSubmit}
+                onClickRemove={props.onClickRemove}
+                onSelectedTask={props.onSelectedTask}
+              />
+            </div>
+          ))}
+        </div>
       </div>
       <footer
         className="row"

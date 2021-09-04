@@ -85,7 +85,7 @@ function TodoForm(props) {
           />
         </div>
         <div className="row">
-          <div className="mb-3 col-12 col-sm-6 col-md-12">
+          <div className="mb-3 col-12 col-sm-12 col-lg-6">
             <label for="exampleInputPassword1" className="form-label">
               Due Date
             </label>
@@ -97,7 +97,7 @@ function TodoForm(props) {
               min={Today}
             />
           </div>
-          <div className="mb-3 col-12 col-sm-6 col-md-12">
+          <div className="mb-3 col-12 col-sm-12 col-lg-6">
             <label for="exampleInputPassword1" className="form-label">
               Priority
             </label>
