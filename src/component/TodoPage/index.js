@@ -105,7 +105,8 @@ function Todo() {
   };
   // remove tasks
   const onRemoveTasks = () => {
-    const listIdRemove = todoListFiltered.map((item) => item.Id);
+    const listTaskRemove = todoListFiltered.filter((item) => item.isSelected);
+    const listIdRemove = listTaskRemove.map((item) => item.Id)
     const todoListNew = todoList.filter(
       (item) => !listIdRemove.includes(item.Id)
     );
