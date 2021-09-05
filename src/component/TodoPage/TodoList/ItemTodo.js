@@ -13,12 +13,7 @@ function ItemTodo(props) {
     const isSelected = e.target.checked;
     props.onSelectedTask(task, isSelected, props.index);
   };
-  // useEffect(() => {
-  //   const checked = props.todo?.isSelected || false;
-  //   console.log(checked, props.todo)
-  //   const checkboxes = document.querySelector('input[type="checkbox"]');
-  //   checkboxes.checked = checked;
-  // }, [props.todo]);
+  
   return (
     <div>
       <div class="card mt-3">

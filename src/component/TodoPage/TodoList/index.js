@@ -48,7 +48,7 @@ function TodoList(props) {
       >
         <span className="col">Bulk Action</span>
         <button
-          className="btn btn-info col-auto "
+          className="btn btn-primary col-auto "
           style={{ padding: "1px 25px", marginRight: 10 }}
         >
           Done
